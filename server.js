@@ -37,22 +37,25 @@ app.set('views', path.join(__dirname, 'src/views'));
  */
 app.get('/', async (req, res) => {
     const title = 'Home';
-    res.render('home', { title });
+    const page = 'home';
+    res.render('home', { title, page });
 });
 
 app.get('/organizations', async (req, res) => {
     const title = 'Our Partner Organizations';
-    res.render('organizations', { title });
+    const page = 'organizations';
+    res.render('organizations', { title, page });
 });
-
 app.get('/projects', async (req, res) => {
     const title = 'Service Projects';
-    res.render('projects', { title });
+    const page = 'projects';
+    res.render('projects', { title, page });
 });
 
 app.get('/categories', async (req, res) => {
     const title = 'Categories';
-    res.render('categories', { title });
+    const page = 'categories';
+    res.render('categories', { title, page });
 });
 
 
