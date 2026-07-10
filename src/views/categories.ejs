@@ -1,16 +1,17 @@
 <%- include('partials/header') %>
     <main>
-        <h1>
-            <%= title %>
-        </h1>
-        <h2>Enviromental</h2>
+        <main>
+            <h1>
+                <%= title %>
+            </h1>
 
-        <h2>Educational</h2>
+            <% categories.forEach(category=> { %>
+                <h2>
+                    <%= category.category_name %>
+                </h2>
+                <% }) %>
 
-        <h2>Community Service</h2>
-
-        <h2>Health and Wellness</h2>
-
+        </main>
 
 
 
