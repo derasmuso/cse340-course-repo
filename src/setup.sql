@@ -64,3 +64,76 @@ VALUES
     (3, 'Literacy Tutoring Program', 'Provide one-on-one reading support to elementary school students.', 'Whittier Elementary School, Salt Lake City, UT', '2026-09-08'),
     (3, 'Winter Coat Drive', 'Collect, sort, and distribute donated winter coats to families in need.', 'Community Center, Taylorsville, UT', '2026-09-15'),
     (3, 'Holiday Gift Wrapping', 'Wrap donated toys and gifts for distribution to families during the holidays.', 'Volunteer Center, Taylorsville, UT', '2026-09-29');
+
+
+-- ========================================
+-- Category Tables
+-- ========================================
+
+CREATE TABLE category (
+    category_id SERIAL PRIMARY KEY,
+    category_name VARCHAR(100) NOT NULL UNIQUE
+);
+
+
+CREATE TABLE service_project_category (
+    service_project_id INT NOT NULL,
+    category_id INT NOT NULL,
+    PRIMARY KEY (service_project_id, category_id),
+    CONSTRAINT fkey_service_project
+        FOREIGN KEY (service_project_id)
+        REFERENCES service_project (service_project_id),
+    CONSTRAINT fkey_category
+        FOREIGN KEY (category_id)
+        REFERENCES category (category_id)
+);
+
+-- ========================================
+-- Insert sample data: Categories
+-- ========================================
+
+INSERT INTO category (category_name)
+VALUES
+    ('Environmental'),
+    ('Community Building'),
+    ('Education & Literacy'),
+    ('Health & Wellness'),
+    ('Hunger Relief');
+
+
+INSERT INTO service_project_category (service_project_id, category_id)
+VALUES
+    -- Habitat Home Build (2) — Community Building
+    (2, 2),
+    -- Community Playground Build (3) — Community Building
+    (3, 2),
+    -- Senior Home Repair Day (4) — Community Building, Health & Wellness
+    (4, 2),
+    (4, 4),
+    -- Youth Center Renovation (5) — Community Building
+    (5, 2),
+    -- Accessible Ramp Installation (6) — Community Building, Health & Wellness
+    (6, 2),
+    (6, 4),
+    -- Community Garden Planting (7) — Environmental
+    (7, 1),
+    -- River Cleanup Day (8) — Environmental
+    (8, 1),
+    -- Tree Planting Initiative (9) — Environmental
+    (9, 1),
+    -- Farmers Market Food Drive (10) — Environmental, Basic Needs & Relief
+    (10, 1),
+    (10, 5),
+    -- Composting Workshop Setup (11) — Environmental
+    (11, 1),
+    -- Food Pantry Restocking (12) — Basic Needs & Relief
+    (12, 5),
+    -- Blood Drive Support (13) — Health & Wellness
+    (13, 4),
+    -- Literacy Tutoring Program (14) — Education & Literacy
+    (14, 3),
+    -- Winter Coat Drive (15) — Basic Needs & Relief
+    (15, 5),
+    -- Holiday Gift Wrapping (16) — Basic Needs & Relief, Community Building
+    (16, 5),
+    (16, 2);
