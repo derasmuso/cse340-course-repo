@@ -97,9 +97,32 @@ const createProject = async (title, description, location, date, organizationId)
     return result.rows[0].service_project_id;
 };
 
+// Updates an existing service project in the database.
+const updateProject = async (projectId, title, description, location, date, organizationId) => {
+    const query = `
+      UPDATE service_project
+      SET service_project_title = $1, service_project_description = $2, service_project_location = $3, service_project_date = $4, organization_id = $5
+      WHERE service_project_id = $6
+      RETURNING service_project_id;
+    `;
+
+    const queryParams = [title, description, location, date, organizationId, projectId];
+    const result = await db.query(query, queryParams);
+
+    if (result.rows.length === 0) {
+        throw new Error('Project not found');
+    }
+
+    if (process.env.ENABLE_SQL_LOGGING === 'true') {
+        console.log('Updated project with ID:', projectId);
+    }
+
+    return result.rows[0].service_project_id;
+};
+
 
 // Export the model functions
-export { getAllProjects, getProjectsByOrganizationId, getUpcomingProjects, getProjectDetails, createProject };
+export { getAllProjects, getProjectsByOrganizationId, getUpcomingProjects, getProjectDetails, createProject, updateProject };
 
 
 
