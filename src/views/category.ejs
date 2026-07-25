@@ -4,6 +4,7 @@
             <%= categoryDetails.category_name %>
         </h1>
 
+
         <% projects.forEach(project=> { %>
             <h2>
                 <a href="/project/<%= project.service_project_id %>">
@@ -11,6 +12,8 @@
                 </a>
             </h2>
             <% }) %>
+
+                <p><a href="/edit-category/<%= categoryDetails.category_id %>" class="btn">Edit Category</a></p>
 
     </main>
     <%- include('partials/footer') %>

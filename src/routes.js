@@ -3,7 +3,7 @@ import express from 'express';
 import { showHomePage } from './controllers/index.js';
 import { showOrganizationsPage, showOrganizationDetailsPage, showNewOrganizationForm, processNewOrganizationForm, organizationValidation, showEditOrganizationForm, processEditOrganizationForm } from './controllers/organizations.js';
 import { showProjectsPage, showProjectDetailsPage, showNewProjectForm, processNewProjectForm, projectValidation, showEditProjectForm, processEditProjectForm } from './controllers/projects.js';
-import { showCategoriesPage, showCategoryDetailsPage, showAssignCategoriesForm, processAssignCategoriesForm } from './controllers/categories.js';
+import { showCategoriesPage, showCategoryDetailsPage, showAssignCategoriesForm, processAssignCategoriesForm, showNewCategoryForm, processNewCategoryForm, categoryValidation, showEditCategoryForm, processEditCategoryForm } from './controllers/categories.js';
 import { testErrorPage } from './controllers/errors.js';
 
 
@@ -50,6 +50,18 @@ router.get('/edit-project/:id', showEditProjectForm);
 
 // Route to handle the edit project form submission
 router.post('/edit-project/:id', projectValidation, processEditProjectForm);
+
+// Route for new category page
+router.get('/new-category', showNewCategoryForm);
+
+// Route to handle new category form submission
+router.post('/new-category', categoryValidation, processNewCategoryForm);
+
+// Route to display the edit category form
+router.get('/edit-category/:id', showEditCategoryForm);
+
+// Route to handle the edit category form submission
+router.post('/edit-category/:id', categoryValidation, processEditCategoryForm);
 
 // error-handling routes
 router.get('/test-error', testErrorPage);
