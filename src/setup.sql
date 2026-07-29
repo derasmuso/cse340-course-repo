@@ -98,42 +98,42 @@ VALUES
     ('Community Building'),
     ('Education & Literacy'),
     ('Health & Wellness'),
-    ('Hunger Relief');
+    ('Basic Needs & Relief');
 
 
 INSERT INTO service_project_category (service_project_id, category_id)
 VALUES
-    -- Habitat Home Build (2) — Community Building
+    -- Habitat Home Build (1) — Community Building
+    (1, 2),
+    -- Community Playground Build (2) — Community Building
     (2, 2),
-    -- Community Playground Build (3) — Community Building
+    -- Senior Home Repair Day (3) — Community Building, Health & Wellness
     (3, 2),
-    -- Senior Home Repair Day (4) — Community Building, Health & Wellness
+    (3, 4),
+    -- Youth Center Renovation (4) — Community Building
     (4, 2),
-    (4, 4),
-    -- Youth Center Renovation (5) — Community Building
+    -- Accessible Ramp Installation (5) — Community Building, Health & Wellness
     (5, 2),
-    -- Accessible Ramp Installation (6) — Community Building, Health & Wellness
-    (6, 2),
-    (6, 4),
-    -- Community Garden Planting (7) — Environmental
+    (5, 4),
+    -- Community Garden Planting (6) — Environmental
+    (6, 1),
+    -- River Cleanup Day (7) — Environmental
     (7, 1),
-    -- River Cleanup Day (8) — Environmental
+    -- Tree Planting Initiative (8) — Environmental
     (8, 1),
-    -- Tree Planting Initiative (9) — Environmental
+    -- Farmers Market Food Drive (9) — Environmental, Basic Needs & Relief
     (9, 1),
-    -- Farmers Market Food Drive (10) — Environmental, Basic Needs & Relief
+    (9, 5),
+    -- Composting Workshop Setup (10) — Environmental
     (10, 1),
-    (10, 5),
-    -- Composting Workshop Setup (11) — Environmental
-    (11, 1),
-    -- Food Pantry Restocking (12) — Basic Needs & Relief
-    (12, 5),
-    -- Blood Drive Support (13) — Health & Wellness
-    (13, 4),
-    -- Literacy Tutoring Program (14) — Education & Literacy
-    (14, 3),
-    -- Winter Coat Drive (15) — Basic Needs & Relief
+    -- Food Pantry Restocking (11) — Basic Needs & Relief
+    (11, 5),
+    -- Blood Drive Support (12) — Health & Wellness
+    (12, 4),
+    -- Literacy Tutoring Program (13) — Education & Literacy
+    (13, 3),
+    -- Winter Coat Drive (14) — Basic Needs & Relief
+    (14, 5),
+    -- Holiday Gift Wrapping (15) — Basic Needs & Relief, Community Building
     (15, 5),
-    -- Holiday Gift Wrapping (16) — Basic Needs & Relief, Community Building
-    (16, 5),
-    (16, 2);
+    (15, 2);
