@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Users page
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #222222;
+    background-color: #f5f5f5;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: #0b5fa5;
+}
+
+a:hover {
+    color: #08477d;
+}
+
+a:focus {
+    outline: 2px solid #0b5fa5;
+    outline-offset: 2px;
+}
+
+/* ---------- Navigation bar ---------- */
+nav {
+    background-color: #10263f;
+    padding: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Main content ---------- */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+main h1 {
+    color: #10263f;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* ---------- User list ---------- */
+main ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+main ul li {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main ul li strong {
+    color: #10263f;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: #10263f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Flash message styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert.info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+/* ---------- Responsive tweak ---------- */
+@media (min-width: 768px) {
+    main h1 {
+        font-size: 2.25rem;
+    }
+}
