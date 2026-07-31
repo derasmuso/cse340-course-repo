@@ -30,8 +30,14 @@
                 </a>
                 <% }) %>
         </p>
-        <p><a href="/assign-categories/<%= project.service_project_id %>" class="btn">Assign Categories</a>
-        </p>
-        <p><a href="/edit-project/<%= project.service_project_id %>" class="btn">Edit Project</a></p>
+
+        <% if (user && user.role_name==='admin' ) { %>
+            <p><a href="/assign-categories/<%= project.service_project_id %>" class="btn">Assign Categories</a></p>
+            <% } %>
+
+                <% if (user && user.role_name==='admin' ) { %>
+                    <p><a href="/edit-project/<%= project.service_project_id %>" class="btn">Edit Project</a></p>
+                    <% } %>
+
     </main>
     <%- include('partials/footer') %>

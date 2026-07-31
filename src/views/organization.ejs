@@ -12,16 +12,19 @@
         <p>Description: <%= organizationDetails.description %>
         </p>
 
-        <p><a href="/edit-organization/<%= organizationDetails.organization_id %>" class="btn">Edit Organization</a></p>
+        <% if (user && user.role_name==='admin' ) { %>
+            <p><a href="/edit-organization/<%= organizationDetails.organization_id %>" class="btn">Edit Organization</a>
+            </p>
+            <% } %>
 
-        <h3>Service Projects</h3>
-        <ul>
-            <% projects.forEach(project=> { %>
-                <li><a href="/project/<%= project.service_project_id %>">
-                        <%= project.service_project_title %>
-                    </a></li>
-                <% }) %>
-        </ul>
+                <h3>Service Projects</h3>
+                <ul>
+                    <% projects.forEach(project=> { %>
+                        <li><a href="/project/<%= project.service_project_id %>">
+                                <%= project.service_project_title %>
+                            </a></li>
+                        <% }) %>
+                </ul>
 
 
     </main>
