@@ -80,6 +80,28 @@ main p {
     margin-bottom: 8px;
 }
 
+/* ---------- Action buttons ---------- */
+.btn {
+    display: inline-block;
+    background-color: #1b6f63;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 15px 0 10px 0;
+}
+
+.btn:hover {
+    background-color: #145951;
+    color: #ffffff;
+}
+
+.btn:focus {
+    outline: 2px solid #10263f;
+    outline-offset: 2px;
+}
+
 /* ---------- Footer ---------- */
 footer {
     background-color: #10263f;
