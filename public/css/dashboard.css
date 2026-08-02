@@ -102,6 +102,45 @@ main p {
     outline-offset: 2px;
 }
 
+/* Volunteer/unvolunteer submit buttons styled to match the .btn links above */
+button.btn {
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ---------- Volunteer project cards (matches the categories page card look) ---------- */
+.volunteer-projects {
+    list-style: none;
+}
+
+.volunteer-projects li {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-left: 4px solid #1b6f63;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.volunteer-projects li a {
+    font-size: 1.3rem;
+}
+
+.volunteer-projects .volunteer-form {
+    margin: 0;
+}
+
+.volunteer-projects .volunteer-form .btn {
+    margin: 0;
+}
+
 /* ---------- Footer ---------- */
 footer {
     background-color: #10263f;
@@ -112,11 +151,18 @@ footer {
 }
 
 /* Flash message styles */
+.flash-messages {
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
 .alert {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+    text-align: center;
 }
 
 .alert.success {

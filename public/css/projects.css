@@ -80,19 +80,36 @@ main h2 {
 /* ---------- Project cards ---------- */
 main ul {
     list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 main ul li {
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    border-left: 4px solid #1b6f63;
     border-radius: 8px;
     padding: 20px;
-    flex: 1 1 240px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+main ul li .project-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+main ul li .project-meta {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+main ul li .project-meta .dot {
+    font-size: 1.4rem;
+    font-weight: bold;
+    vertical-align: middle;
 }
 
 /* ---------- Footer ---------- */
@@ -105,11 +122,18 @@ footer {
 }
 
 /* Flash message styles */
+.flash-messages {
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
 .alert {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+    text-align: center;
 }
 
 .alert.success {
@@ -144,6 +168,17 @@ form {
     padding: 25px;
     max-width: 500px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Volunteer/unvolunteer forms are just a single button, not a card-style form */
+.volunteer-form {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    max-width: none;
+    box-shadow: none;
+    display: inline-block;
 }
 
 .form-group {
@@ -226,9 +261,36 @@ button[type="submit"]:focus {
     outline-offset: 2px;
 }
 
+/* Volunteer/unvolunteer submit buttons styled to match the .btn links above
+   (overrides the more specific button[type="submit"] rule used by other forms) */
+button.btn {
+    background-color: #1b6f63;
+    color: #ffffff;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #145951;
+    color: #ffffff;
+}
+
+button.btn:focus {
+    outline: 2px solid #10263f;
+    outline-offset: 2px;
+}
+
 /* ---------- Responsive tweak ---------- */
 @media (min-width: 768px) {
     main h1 {
         font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main ul {
+        grid-template-columns: 1fr;
     }
 }

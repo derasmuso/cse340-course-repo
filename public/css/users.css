@@ -73,22 +73,36 @@ main h1 {
 /* ---------- User list ---------- */
 main ul {
     list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
     margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 main ul li {
     background-color: #ffffff;
     border: 1px solid #dddddd;
+    border-left: 4px solid #1b6f63;
     border-radius: 8px;
     padding: 15px 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-main ul li strong {
-    color: #10263f;
+main ul li .user-name {
+    color: #1b3a5c;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+main ul li .user-meta {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+main ul li .user-meta .dot {
+    font-size: 1.4rem;
+    font-weight: bold;
+    vertical-align: middle;
 }
 
 /* ---------- Footer ---------- */
@@ -101,11 +115,18 @@ footer {
 }
 
 /* Flash message styles */
+.flash-messages {
+    max-width: 900px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
 .alert {
     padding: 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+    text-align: center;
 }
 
 .alert.success {
@@ -136,5 +157,11 @@ footer {
 @media (min-width: 768px) {
     main h1 {
         font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    main ul {
+        grid-template-columns: 1fr;
     }
 }

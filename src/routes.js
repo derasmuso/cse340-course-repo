@@ -6,6 +6,7 @@ import { showProjectsPage, showProjectDetailsPage, showNewProjectForm, processNe
 import { showCategoriesPage, showCategoryDetailsPage, showAssignCategoriesForm, processAssignCategoriesForm, showNewCategoryForm, processNewCategoryForm, categoryValidation, showEditCategoryForm, processEditCategoryForm } from './controllers/categories.js';
 import { testErrorPage } from './controllers/errors.js';
 import { showUserRegistrationForm, processUserRegistrationForm, showLoginForm, processLoginForm, processLogout, requireLogin, showDashboard, requireRole, showUsersPage } from './controllers/users.js';
+import { processVolunteerSignup, processVolunteerRemoval } from './controllers/volunteers.js';
 
 
 const router = express.Router();
@@ -78,6 +79,10 @@ router.get('/dashboard', requireLogin, showDashboard);
 
 // Route for users page
 router.get('/users', requireRole('admin'), showUsersPage);
+
+// Routes to handle volunteering for a project
+router.post('/project/:id/volunteer', requireLogin, processVolunteerSignup);
+router.post('/project/:id/unvolunteer', requireLogin, processVolunteerRemoval);
 
 // error-handling routes
 router.get('/test-error', testErrorPage);

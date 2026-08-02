@@ -5,13 +5,15 @@
             <%= title %>
         </h1>
 
-        <% categories.forEach(category=> { %>
-            <h2>
-                <a href="/category/<%= category.category_id %>">
-                    <%= category.category_name %>
-                </a>
-            </h2>
-            <% }) %>
+        <div class="categories-grid">
+            <% categories.forEach(category=> { %>
+                <h2>
+                    <a href="/category/<%= category.category_id %>">
+                        <%= category.category_name %>
+                    </a>
+                </h2>
+                <% }) %>
+        </div>
                 <% if (user && user.role_name==='admin' ) { %>
                     <p><a href="/new-category" class="btn">Add a new category</a></p>
                     <% } %>

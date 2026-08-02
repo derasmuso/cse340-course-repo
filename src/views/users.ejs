@@ -6,9 +6,12 @@
         <ul>
             <% users.forEach(user=> { %>
                 <li>
-                    <strong>
+                    <p class="user-name">
                         <%= user.name %>
-                    </strong> — <%= user.email %> (<%= user.role_name %>)
+                    </p>
+                    <p class="user-meta">
+                        <%= user.email %> <span class="dot">&middot;</span> <%= user.role_name %>
+                    </p>
                 </li>
                 <% }) %>
         </ul>
